@@ -7,21 +7,21 @@
 	const client_secret = "9be490c1cbed6af3dc276be6224972c951bad20e";
 	const count = 6;
 	const sort = "created: asc";
-	
+
 	async function getUser(user) {
 		const usuarioResponse = await fetch(
-		`${url}/${user}?client_id=${client_id}&client_secret=${client_secret}`);
+			`${url}/${user}?client_id=${client_id}&client_secret=${client_secret}`);
 
 		const reposResponse = await fetch(
-		`${url}/${user}/repos?per_page=${count}$sort=${sort}&client_id=${client_id}&client_secret=${client_secret}`);
+			`${url}/${user}/repos?per_page=${count}$sort=${sort}&client_id=${client_id}&client_secret=${client_secret}`);
 
 
-		const usuario =  await usuarioResponse.json();
+		const usuario = await usuarioResponse.json();
 		const repos = await reposResponse.json();
-		return {usuario, repos};
+		return { usuario, repos };
 	}
 
-// Essa função mostrarar o usuario em um grid com FOTO E NUMEROS DE REPOSITORIO, SEGUIDORES E SEGUINDO!!!
+	// Essa função mostrarar o usuario em um grid com FOTO E NUMEROS DE REPOSITORIO, SEGUIDORES E SEGUINDO!!!
 
 	function showUsuario(user) {
 		console.log(user);
@@ -46,12 +46,12 @@
 	 </div> `;
 
 	}
-	
-	function mostrarRepositorio(repos){
-	let output='';
-	
-	repos.forEach(repo =>{
-	output += `<div class="card card-body mb-2">
+
+	function mostrarRepositorio(repos) {
+		let output = '';
+
+		repos.forEach(repo => {
+			output += `<div class="card card-body mb-2">
 		<div class="row">
 			<div class="col-md-6">
 				<a href="${repo.html_url}" target="_black">${repo.name}></a>
@@ -63,10 +63,9 @@
 			</div>
 		</div>
 	</div>`
-	});
-	
-	document.getElementById("repos").innerHTML = output; 
-	
+		});
+
+		document.getElementById("repos").innerHTML = output;
 	}
 
 	pesquisar.addEventListener("keyup", (e) => {
@@ -74,12 +73,10 @@
 
 		if (user.length > 0) {
 			getUser(user).then(res => {
-			 showUsuario(res.usuario)
-			 mostrarRepositorio(res.repos)
-			 });
+				showUsuario(res.usuario)
+				mostrarRepositorio(res.repos)
+			});
 		}
-		
-	
-		
+
 	})
 })();
