@@ -1,6 +1,5 @@
-# GIT-REPOSITÓRIO-HUB
-### Processo seletivo TOPi
- Desenvolver uma aplicação web capaz de exibir uma grade com os repositórios mais marcados de uma linguagem no github.
+# API GIT-REPOSITÓRIO-HUB
+
 ## Sobre
   Essa Aplicação contém uma página de rolagem infinita com um input required inicial, realizando pesquisas dos repositórios github e organizandos em grids 
   com foto do usuário, nome do repositório, numeros de forks e estrelas.
