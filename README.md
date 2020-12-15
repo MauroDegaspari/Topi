@@ -1,7 +1,7 @@
 # API GIT-REPOSITÓRIO-HUB
 
 ## Sobre
-  Essa Aplicação contém uma página de rolagem infinita com um input required inicial, realizando pesquisas dos repositórios github e organizandos em grids 
+  Essa Aplicação contém uma página de rolagem infinita com um input required inicial, realizando pesquisas dos repositórios do github e organizandos em grids 
   com foto do usuário, nome do repositório, numeros de forks e estrelas.
   
   
